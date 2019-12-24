@@ -1,0 +1,62 @@
+{
+	"partials": {
+		"cookiebar": {
+			"close": "Schließen"
+		},
+		"disqus": {
+			"noscript1": "Bitte aktiviere JavaScript, um die Kommentare",
+			"noscript2": "von Disqus anzuzeigen."
+		},
+		"menu": {
+			"label": "Menu"
+		},
+		"top": {			
+			"lastUpdated": "Zuletzt aktualisiert: "
+		},
+		"pagination": {
+			"prev": "Zurück",
+			"next": "Weiter"
+		},
+		"shareButtons": {
+			"shareWithFacebook": "Auf Facebook teilen",
+			"shareWithTwitter": "Auf Twitter teilen",
+			"shareWithWhatsapp": "Auf WhatsApp teilen",
+			"shareWithPinterest": "Auf Pinterest teilen",
+			"shareWithMix": "Auf Mix teilen",
+			"shareWithLinkedIn": "Auf LinkedIn teilen",
+			"shareWithBuffer": "Auf Buffer teilen"
+		},
+		"sidebar": {
+			"featured": "Hervorgehoben",
+			"follow": "Folgen",
+			"authors": "Autoren",
+			"authorsPost": "Artikel: ",
+			"tags": "Schlagworte",
+			"newsletter": "Newsletter",
+			"newsletterDesc": "Melden Sie sich an, um E-Mail-Updates zu erhalten und zu erfahren, was bei uns los ist!",
+			"newsletterSubscribe": "abonnieren"
+		}
+	},
+	"listing": {
+		"advertisement": "Werbung"
+	},
+	"post": {
+		"publishedBy": "Von",
+		"relatedPosts": "Ähnliche Artikel",
+		"readMore": "Weiterlesen",
+		"lastUpdatedDate": "Dieser Artikel wurde aktualisiert am",
+		"comments": "Kommentare",
+		"previousPost": "Vorheriger Artikel",
+		"nextPost": "Nächster Artikel"
+	},
+	"error": {
+		"404": "404",
+		"message1": "Hoppla, irgendwas ist schief gelaufen",
+		"message2": "Leider kann die von Ihnen angeforderte Seite nicht angezeigt werden"
+	},	
+    "search": {
+        "title": "Suche",
+        "placeholder": "suchen...",
+		"submit": "OK"
+    }
+}
