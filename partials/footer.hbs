@@ -116,9 +116,16 @@
     <script id="dsq-count-scr" src="https://{{@config.custom.commentDisqusShortname}}.disqus.com/count.js" async></script>
 {{/checkIfAny}}
 {{#if @renderer.previewMode}}
-<script defer src="{{js "svg2js.js"}}"></script>
-<script defer src="{{js "svg-fix.js"}}"></script>
+	<script defer src="{{js "svg2js.js"}}"></script>
+	<script defer src="{{js "svg-fix.js"}}"></script>
 {{/if}}
+
+<script defer src="{{@website.assetsUrl}}/theme/js/jquery/jquery-2.2.4.min.js"></script>
+<script defer src="{{@website.assetsUrl}}/theme/js/popper.min.js"></script>
+<script defer src="{{@website.assetsUrl}}/theme/js/bootstrap.min.js"></script>
+<script defer src="{{@website.assetsUrl}}/theme/js/plugins.js"></script>
+<script defer src="{{@website.assetsUrl}}/theme/js/active.js"></script>
+
 {{{@footerCustomCode}}}
 {{{ publiiFooter }}}
 </body>

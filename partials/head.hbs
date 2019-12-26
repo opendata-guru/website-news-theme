@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="{{ @website.language }}">
+
 <head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{#if title}}
-    <title>{{title}}</title>
-    {{else}}
-    <title>{{@website.name}}</title>
-    {{/if}}
+	<meta charset="UTF-8">
     {{metaDescription}}
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	{{metaRobots}}
     {{{publiiHead}}}
-	{{canonicalLink}}
-	{{ampLink}}
-	{{feedLink}}
-    {{socialMetaTags}}
+
+	{{#if title}}
+		<title>{{title}}</title>
+    {{else}}
+    	<title>{{@website.name}}</title>
+    {{/if}}
+
 	{{#if @config.custom.faviconUpload}}
 	    <link rel="shortcut icon" href="{{@config.custom.faviconUpload}}" type="{{@config.custom.faviconExtension}}" />
     {{/if}}
-    {{#if @pagination}}
-	{{#if @pagination.previousPage}}
-	    <link rel="prev" href="{{@pagination.previousPageUrl }}">
-	{{/if}}
-	{{#if @pagination.nextPage}}
-	    <link rel="next" href="{{@pagination.nextPageUrl }}">
-	{{/if}}
+
+	{{canonicalLink}}
+	{{ampLink}}
+	{{feedLink}}
+	{{socialMetaTags}}
+
+	{{#if @pagination}}
+		{{#if @pagination.previousPage}}
+	    	<link rel="prev" href="{{@pagination.previousPageUrl }}">
+		{{/if}}
+		{{#if @pagination.nextPage}}
+	    	<link rel="next" href="{{@pagination.nextPageUrl }}">
+		{{/if}}
     {{/if}}
-    {{> fonts}}  
+
+	<!-- ToDo: remove this lines -->
+	{{> fonts}}  
     <link rel="stylesheet" href="{{css "style.css" }}">	
+	<!-- this is better -->
+    <link rel="stylesheet" href="{{@website.assetsUrl}}/theme/style.css">	
+	<!-- end -->
+
 	{{#is "post"}}
         {{#post}}
               {{#if hasGallery}}
@@ -43,11 +54,14 @@
               {{/is}}
         {{/checkIf}}
 	{{/checkIf}}
+
 	{{jsonLD}}
+
 	{{#if @config.custom.lazyLoad}}      
         <script src="{{js "ls.object-fit.min.js"}}"></script>      
         <script async src="{{js "lazysizes.min.js"}}"></script>          
 	{{/if}}	
+
 	{{#is "post"}}
         {{#post}}
               {{#if hasGallery}}
@@ -68,10 +82,10 @@
 		            </style>		        
               {{/if}}
         {{/post}}
-        {{/is}}
-        
-        {{#checkIf @config.custom.frontSource '==' "post"}}
-          {{#checkIf @config.custom.frontGallery '==' true}}
+	{{/is}}
+
+	{{#checkIf @config.custom.frontSource '==' "post"}}
+		{{#checkIf @config.custom.frontGallery '==' true}}
             {{#is "index"}}
                <style>	
 		            {{#checkIf @config.custom.galleryLightboxStyle '==' "pswp--dark" }}
@@ -88,9 +102,10 @@
 		                 }		
 		            {{/checkIf}}
                </style>	
-            {{/is}}	
-          {{/checkIf}}
-        {{/checkIf}} 		
+			{{/is}}	
+		{{/checkIf}}
+	{{/checkIf}} 		
+
 	{{{@headCustomCode}}}
 </head>
 <body>
