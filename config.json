@@ -61,6 +61,30 @@
     "customConfig": [
 
         {
+            "name": "websiteTitle",
+            "label": "Website title",
+            "group": "Layout",
+            "note": "Used in header and footer as website title",
+            "value": "My cool website",
+            "type": "text"
+        },
+        {
+            "name": "websiteURI",
+            "label": "Website link",
+            "group": "Layout",
+            "note": "Used in header and footer as link with the website title",
+            "value": "#",
+            "type": "text"
+        },
+        {
+            "name": "copyright",
+            "label": "I purchased a legal copy of the template",
+            "group": "Layout",
+            "note": "Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
             "name": "mainWidth",
             "label": "Main column width",
             "group": "Layout",
@@ -1271,7 +1295,7 @@
             "name": "copyrightText",
             "label": "Copyright text",
             "group": "Footer",
-             "value": "Powered by <a href=\"https://getpublii.com\" target=\"_blank\" rel=\"nofollow noopener\">Publii Static CMS</a>",
+            "value": "Powered by <a href=\"https://getpublii.com\" target=\"_blank\" rel=\"nofollow noopener\">Publii Static CMS</a>",
             "type": "wysiwyg"
         },
         {

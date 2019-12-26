@@ -1269,3 +1269,33 @@ textarea:focus ~ .highlight {
         color: #959595; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* custom styles begin */
+
+@media all and (max-width: 56.1875em) {
+	.socialFooter {
+		margin-top: 0.72857rem;
+	}
+}
+@media all and (min-width: 56.25em) {
+	.socialFooter {
+		margin-left: auto;
+	}
+}
+.socialFooter > a {
+	display: inline-block;
+	margin-left: 0.48571rem;
+}
+.socialFooter > a:hover svg {
+	fill: #0000ff;
+}
+.socialFooter > a svg {
+	fill: #8d8d8d;
+	height: 1rem;
+	-webkit-transition-duration: 500ms;
+	-o-transition-duration: 500ms;
+	transition-duration: 500ms;
+	width: 1rem;
+}
+
+/* custom styles end */
