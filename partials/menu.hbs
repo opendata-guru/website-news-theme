@@ -1,54 +1,99 @@
 {{#unless level}}
-   <nav class="navbar">
-      <button
-         class="navbar__toggle"
-         aria-label="{{ translate 'partials.menu.label' }}"
-         aria-haspopup="true"
-         aria-expanded="false">
-         <span class="navbar__toggle-box">
-            <span class="navbar__toggle-inner">{{ translate 'partials.menu.label' }}</span>
-         </span>
-      </button>
-   {{/unless}}
-    <ul{{#if level}} class="navbar__submenu level-{{level}}" aria-hidden="true" {{else}} class="navbar__menu"{{/if}}>
-        {{#each items}}
-             <li{{menuItemClasses}}>
-            {{#if link}}
-               <a
-                  href="{{menuUrl}}"
-                  {{#if title}}
-                     title="{{title}}"
-                  {{/if}}
-                  {{#if target}}
-                     target="{{target}}"
-                  {{/if}}
-                  {{#if rel}}
-                     rel="{{rel}}"
-                  {{/if}}
-                  {{#if items}} 
-                     aria-haspopup="true"
-                  {{/if}}>
-                  {{label}}
-              </a>
-            {{else}}
-               <span 
-                  class="is-separator"
-                  {{#if title}}
-                     title="{{title}}"
-                  {{/if}} 
-                  {{#if items}} 
-                     aria-haspopup="true"
-                  {{/if}}>
-                  {{label}}
-               </span>
-            {{/if}}
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="worldNav">
+{{/unless}}
 
-            {{#if items}}
-               {{> menu}}
-            {{/if}}
-         </li>
-        {{/each}}
-    </ul>
-   {{#unless level}}
-   </nav>
+	{{#if level}}
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown{{level}}{{label}}">
+	{{else}}
+		<ul class="navbar-nav ml-auto">
+	{{/if}}
+
+	{{#each items as |item itemID|}}
+		{{#if items}}
+			<li class="nav-item dropdown">
+		{{else}}
+			<li class="nav-item">
+		{{/if}}
+			{{#if link}}
+				<a
+				    href="{{menuUrl}}"
+				    {{#if title}}
+				   		title="{{title}}"
+				  	{{/if}}
+				    {{#if target}}
+				   		target="{{target}}"
+				   	{{/if}}
+				   	{{#if rel}}
+				   		rel="{{rel}}"
+					{{/if}}
+				   	{{#if items}} 
+				   		id="navbarDropdown{{level}}{{label}}"
+				   		role="button"
+				   		data-toggle="dropdown"
+				   		aria-haspopup="true"
+				   		aria-expanded="false"
+				   		class="nav-link dropdown-toggle"
+				   	{{else}}
+				   		class="nav-link"
+					{{/if}}
+				   	>
+					{{label}}
+				</a>
+				{{#if items}}
+				   {{> menu-sub}}
+				{{/if}}
+			{{else}}
+		   		<a 
+				   	href="#"
+				   	onclick="return false"
+				  	{{#if title}}
+					  	title="{{title}}"
+				  	{{/if}}
+				  	{{#if items}} 
+					  	aria-haspopup="true"
+				  	{{/if}}
+				   	{{#if items}} 
+				   		id="navbarDropdown{{level}}{{label}}"
+				   		role="button"
+				   		data-toggle="dropdown"
+				   		aria-haspopup="true"
+				   		aria-expanded="false"
+				   		class="nav-link dropdown-toggle"
+				   	{{else}}
+				   		class="nav-link"
+					{{/if}}
+				   	>
+				  	{{label}}
+			   	</a>
+				{{#if items}}
+				   {{> menu-sub}}
+				{{/if}}
+			{{/if}}
+		</li>
+	{{/each}}
+
+	{{#if level}}
+		</div>
+	{{else}}
+		</ul>
+	{{/if}}
+
+{{#unless level}}
+		{{#if @config.custom.search}}
+			<div id="search-wrapper">
+				<form action="{{@website.searchUrl}}">
+					<input
+						type="search"
+						id="search"
+						name="{{@config.custom.searchParam}}"
+						placeholder=" {{ translate 'search.placeholder' }}" />
+					<div id="close-icon"></div>
+					<input class="d-none" type="submit" value="" aria-label="Search">
+				</form>
+			</div>
+		{{/if}}
+	</div>
 {{/unless}}

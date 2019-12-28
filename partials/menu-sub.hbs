@@ -1,0 +1,37 @@
+<div class="dropdown-menu" aria-labelledby="navbarDropdown{{level}}{{label}}">
+
+{{#each items}}
+	{{#if link}}
+		<a
+			href="{{menuUrl}}"
+			{{#if title}}
+				title="{{title}}"
+			{{/if}}
+			{{#if target}}
+				target="{{target}}"
+			{{/if}}
+			{{#if rel}}
+				rel="{{rel}}"
+			{{/if}}
+		   	class="dropdown-item"
+			>
+			{{label}}
+		</a>
+	{{else}}
+		<a 
+			href="#"
+			onclick="return false"
+			{{#if title}}
+				title="{{title}}"
+			{{/if}}
+			{{#if items}} 
+				aria-haspopup="true"
+			{{/if}}
+		   	class="dropdown-item"
+			>
+			{{label}}
+		</a>
+	{{/if}}
+{{/each}}
+
+</div>

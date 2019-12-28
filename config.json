@@ -63,7 +63,7 @@
         {
             "name": "websiteTitle",
             "label": "Website title",
-            "group": "Layout",
+            "group": "Website",
             "note": "Used in header and footer as website title",
             "value": "My cool website",
             "type": "text"
@@ -71,20 +71,149 @@
         {
             "name": "websiteURI",
             "label": "Website link",
-            "group": "Layout",
+            "group": "Website",
             "note": "Used in header and footer as link with the website title",
             "value": "#",
             "type": "text"
         },
+
+		
         {
+            "name": "search",
+            "label": "Search",
+            "group": "Header",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "searchId",
+            "group": "Header",
+            "label": "Google Custom Search Id",
+            "note": "A search ID is required for search functionality, which uses Google Custom Search. Learn how to configure it here: <a href='https://getpublii.com/docs/search-configuration.html' target='_blank'>https://www.getpublii.com/docs/...</a>",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "search",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "searchParam",
+            "group": "Header",
+            "label": "Search parameter",
+            "note": "You can change the default \"q\" search parameter if desired; this is recommended only for advanced users.",
+            "value": "q",
+            "type": "text",
+            "dependencies": [{
+                "field": "search",
+                "value": "true"
+            }]
+        },
+
+		
+		{
             "name": "copyright",
             "label": "I purchased a legal copy of the template",
-            "group": "Layout",
+            "group": "Footer",
             "note": "Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.",
             "value": false,
             "type": "checkbox"
         },
         {
+            "name": "copyrightText",
+            "label": "Copyright text",
+            "group": "Footer",
+            "value": "Powered by <a href=\"https://getpublii.com\" target=\"_blank\" rel=\"nofollow noopener\">Publii Static CMS</a>",
+            "type": "wysiwyg"
+        },
+        {
+            "name": "socialButtons",
+            "group": "Footer",
+            "label": "Follow us buttons",
+            "note": " Enter your Follow Us button URL in the Follow us tab ",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "socialFooterFacebook",
+            "group": "Footer",
+            "label": "Facebook",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialFooterTwitter",
+            "group": "Footer",
+            "label": "Twitter",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialFooterInstagram",
+            "group": "Footer",
+            "label": "Instagram",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialFooterLinkedin",
+            "group": "Footer",
+            "label": "Linkedin",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialFooterVimeo",
+            "group": "Footer",
+            "label": "Vimeo",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialFooterPinterest",
+            "group": "Footer",
+            "label": "Pinterest",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialFooterYoutube",
+            "group": "Footer",
+            "label": "Youtube",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+
+		
+		{
             "name": "mainWidth",
             "label": "Main column width",
             "group": "Layout",
@@ -101,13 +230,6 @@
             "type": "text"
         },
 
-        {
-            "name": "topLatestSync",
-            "label": "Date of last website update",
-            "group": "Layout",
-            "value": true,
-            "type": "checkbox"
-        },
         {
             "name": "separator",
             "type": "separator",
@@ -1185,39 +1307,6 @@
             ]
         },
         
-        
-        {
-            "name": "search",
-            "label": "Search",
-            "group": "Search",
-            "value": true,
-            "type": "checkbox"
-        },
-        {
-            "name": "searchId",
-            "group": "Search",
-            "label": "Google Custom Search Id",
-            "note": "A search ID is required for search functionality, which uses Google Custom Search. Learn how to configure it here: <a href='https://getpublii.com/docs/search-configuration.html' target='_blank'>https://www.getpublii.com/docs/...</a>",
-            "value": "",
-            "type": "text",
-            "dependencies": [{
-                "field": "search",
-                "value": "true"
-            }]
-        },
-        {
-            "name": "searchParam",
-            "group": "Search",
-            "label": "Search parameter",
-            "note": "You can change the default \"q\" search parameter if desired; this is recommended only for advanced users.",
-            "value": "q",
-            "type": "text",
-            "dependencies": [{
-                "field": "search",
-                "value": "true"
-            }]
-        },
-
 
         {
             "name": "shareFacebook",
@@ -1288,100 +1377,6 @@
             "note": "A shortname is the unique identifier assigned to a Disqus site. Please visit https://help.disqus.com/ to find more details. <br /><br /><span style=\"background: #fff8d4\">Do not forget to enable comments under Post Options tab.</span>",
             "value": "",
             "type": "text"
-        },
-
-
-        {
-            "name": "copyrightText",
-            "label": "Copyright text",
-            "group": "Footer",
-            "value": "Powered by <a href=\"https://getpublii.com\" target=\"_blank\" rel=\"nofollow noopener\">Publii Static CMS</a>",
-            "type": "wysiwyg"
-        },
-        {
-            "name": "socialButtons",
-            "group": "Footer",
-            "label": "Follow us buttons",
-            "note": " Enter your Follow Us button URL in the Follow us tab ",
-            "value": false,
-            "type": "checkbox"
-        },
-        {
-            "name": "socialFooterFacebook",
-            "group": "Footer",
-            "label": "Facebook",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "socialButtons",
-                "value": "true"
-            }]
-        },
-        {
-            "name": "socialFooterTwitter",
-            "group": "Footer",
-            "label": "Twitter",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "socialButtons",
-                "value": "true"
-            }]
-        },
-        {
-            "name": "socialFooterInstagram",
-            "group": "Footer",
-            "label": "Instagram",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "socialButtons",
-                "value": "true"
-            }]
-        },
-        {
-            "name": "socialFooterLinkedin",
-            "group": "Footer",
-            "label": "Linkedin",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "socialButtons",
-                "value": "true"
-            }]
-        },
-        {
-            "name": "socialFooterVimeo",
-            "group": "Footer",
-            "label": "Vimeo",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "socialButtons",
-                "value": "true"
-            }]
-        },
-        {
-            "name": "socialFooterPinterest",
-            "group": "Footer",
-            "label": "Pinterest",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "socialButtons",
-                "value": "true"
-            }]
-        },
-        {
-            "name": "socialFooterYoutube",
-            "group": "Footer",
-            "label": "Youtube",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "socialButtons",
-                "value": "true"
-            }]
         },
 
         {
