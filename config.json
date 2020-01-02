@@ -665,9 +665,56 @@
             }]
         },           
 
+
         {
+            "name": "separator",
+            "type": "separator",
+            "label": "About widget",
+            "group": "Sidebar",
+            "size": "small"
+        },
+        {
+            "name": "sidebarAbout",
+            "label": "Show widget",
+            "group": "Sidebar",
+            "note": "Show the about widgets for this size",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "sidebarAboutTitle",
+            "label": "Title",
+            "group": "Sidebar",
+            "note": "",
+            "value": "About this blog",
+            "type": "textarea",
+            "dependencies": [{
+                "field": "sidebarAbout",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "sidebarAboutText",
+            "label": "Text",
+            "group": "Sidebar",
+            "note": "",
+            "value": "",
+            "type": "textarea",
+            "dependencies": [{
+                "field": "sidebarAbout",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Featured Posts widget",
+            "group": "Sidebar",
+            "size": "small"
+        },
+		{
             "name": "featured",
-            "label": "Featured posts",
+            "label": "Show widget",
             "group": "Sidebar",
             "value": true,
             "type": "checkbox"
@@ -695,26 +742,15 @@
             }]
         },
         {
-            "name": "featuredDate",
-            "group": "Sidebar",
-            "label": "Show date",
-            "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "featured",
-                "value": "true"
-            }]
-        },
-        {
             "name": "separator",
             "type": "separator",
-            "label": " ",
+            "label": "Advertisement widget",
             "group": "Sidebar",
             "size": "small"
         },
         {
             "name": "sidebarAd",
-            "label": "Ad",
+            "label": "Show widget",
             "group": "Sidebar",
             "value": false,
             "type": "checkbox"
@@ -734,15 +770,29 @@
         {
             "name": "separator",
             "type": "separator",
-            "label": " ",
+            "label": "Today widget",
+            "group": "Sidebar",
+            "size": "small"
+        },
+        {
+            "name": "sidebarToday",
+            "label": "Show widget",
+            "group": "Sidebar",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Social widget",
             "group": "Sidebar",
             "size": "small"
         },
         {
             "name": "follow",
-            "label": "Follow us",
+            "label": "Show widget",
             "group": "Sidebar",
-            "note": " Enter your Follow Us button URL in the Follow Us tab ",
+            "note": "Enter your Follow Us button URL in the Follow Us tab ",
             "value": false,
             "type": "checkbox"
         },
@@ -822,18 +872,18 @@
                 "field": "follow",
                 "value": "true"
             }]
-        },        
+        },
         {
             "name": "separator",
             "type": "separator",
-            "label": " ",
+            "label": "Authors widget",
             "group": "Sidebar",
             "size": "small"
         },
 
         {
             "name": "authors",
-            "label": "Authors",
+            "label": "Show widget",
             "group": "Sidebar",
             "value": true,
             "type": "checkbox"
@@ -874,14 +924,14 @@
         {
             "name": "separator",
             "type": "separator",
-            "label": " ",
+            "label": "Newsletter widget",
             "group": "Sidebar",
             "size": "small"
         },
 
         {
             "name": "newsletter",
-            "label": "Newsletter",
+            "label": "Show widget",
             "group": "Sidebar",
             "value": true,
             "type": "checkbox"
@@ -901,13 +951,13 @@
         {
             "name": "separator",
             "type": "separator",
-            "label": " ",
+            "label": "Tags widget",
             "group": "Sidebar",
             "size": "small"
          },
         {
             "name": "tags",
-            "label": "Tags",
+            "label": "Show widget",
             "group": "Sidebar",
             "value": true,
             "type": "checkbox"

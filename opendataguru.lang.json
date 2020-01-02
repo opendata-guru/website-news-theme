@@ -27,8 +27,9 @@
 			"shareWithBuffer": "Auf Buffer teilen"
 		},
 		"sidebar": {
-			"featured": "Hervorgehoben",
-			"follow": "Folgen",
+			"featured": "Top Nachrichten",
+			"todaysPick": "Heute empfohlen",
+			"follow": "Verbunden bleiben",
 			"authors": "Autoren",
 			"authorsPost": "Artikel: ",
 			"tags": "Schlagworte",
