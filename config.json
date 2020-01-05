@@ -238,71 +238,6 @@
             "size": "big"
         },
         {
-            "name": "frontSource",
-            "label": "Front page displays",
-            "group": "Layout",            
-            "value": "default",
-            "type": "radio",
-            "options": [
-                {
-                    "label": "Latest posts",
-                    "value": "default"
-                },
-                {
-                    "label": "Selected post",
-                    "value": "post"
-                }
-            ]
-        },  
-        {
-            "name": "frontPost",
-            "label": "Posts",
-            "group": "Layout",
-            "note": "We strongly recommended 'hide' and 'noindex' the selected post to avoid the duplicate content issue.",
-            "value": "",
-            "type": "posts-dropdown", 
-            "dependencies": [
-            {
-                "field": "frontSource",
-                "value": "post"
-            }]
-        },
-        {
-            "name": "frontGallery",
-            "group": "Layout",
-            "label": "",
-            "note": "Enable if you want to display a post with image gallery",
-            "value": false,
-            "type": "checkbox", 
-            "dependencies": [
-            {
-                "field": "frontSource",
-                "value": "post"
-            }]
-        },
-        {
-            "name": "frontPostTemplate",
-            "label": "Post template",
-            "group": "Layout",            
-            "value": "default",
-            "type": "radio",
-            "options": [
-                {
-                    "label": "Default",
-                    "value": "default"
-                },
-                {
-                    "label": "Alternative (centered)",
-                    "value": "alternative"
-                }
-            ], 
-            "dependencies": [
-            {
-                "field": "frontSource",
-                "value": "post"
-            }]
-        }, 
-        {
             "name": "separator",
             "type": "separator",
             "label": "",
@@ -350,12 +285,7 @@
             "type": "separator",
             "label": "",
             "group": "Layout",
-            "size": "big", 
-            "dependencies": [
-            {
-                "field": "frontSource",
-                "value": "default"
-            }]
+            "size": "big"
         },
 
         {
@@ -390,11 +320,7 @@
                 {
                     "label": "2 columns - 4 - 1",
                     "value": "cat--layout-2col-4-1"
-                }],
-            "dependencies": [{
-                "field": "frontSource",
-                "value": "default"
-            }]
+                }]
         },
 
         {
@@ -402,44 +328,28 @@
             "group": "Layout",
             "label": "Show author name",
             "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "frontSource",
-                "value": "default"
-            }]
+            "type": "checkbox"
         },
         {
             "name": "frontAuthorAvatar",
             "group": "Layout",
             "label": "Show author avatar",
             "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "frontSource",
-                "value": "default"
-            }]
+            "type": "checkbox"
         },
         {
             "name": "frontDate",
             "group": "Layout",
             "label": "Show date",
             "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "frontSource",
-                "value": "default"
-            }]
+            "type": "checkbox"
         },
         {
             "name": "frontTag",
             "group": "Layout",
             "label": "Show tag",
             "value": true,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "frontSource",
-                "value": "default"
-            }]
+            "type": "checkbox"
         },
         {
             "name": "frontCommentCount",
@@ -447,11 +357,7 @@
             "label": "Show comment count",
             "note": "Set the options in the Comments tab before enabling this option. Comment count link text can be customized at your Disqus Admin > Settings > <a href='https://disqus.com/admin/settings/community/' target='_blank'>Community page</a>.",
             "value": false,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "frontSource",
-                "value": "default"
-            }]
+            "type": "checkbox"
         },
         {
             "name": "frontAd",
@@ -459,11 +365,7 @@
             "label": "Show ad",
             "note": "The ad position will be different depending on the chosen layout. To get the best visual effect, display 10 - 12 posts per page.",
             "value": false,
-            "type": "checkbox",
-            "dependencies": [{
-                "field": "frontSource",
-                "value": "default"
-            }]
+            "type": "checkbox"
         },
         {
             "name": "frontAdCode",
@@ -476,10 +378,6 @@
                 {
                     "field": "frontAd",
                     "value": "true"
-                },
-                {
-                    "field": "frontSource",
-                    "value": "default"
                 }
             ]
         },

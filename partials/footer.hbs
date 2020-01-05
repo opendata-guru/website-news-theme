@@ -136,13 +136,6 @@
       {{/if}}
   {{/post}}
 {{/is}}
-{{#checkIf @config.custom.frontSource '==' "post"}}
-   {{#checkIf @config.custom.frontGallery '==' true}}
-      {{#is "index"}}
-          {{> photoswipe}}
-      {{/is}}
-   {{/checkIf}}
-{{/checkIf}}
 {{#checkIfAny @config.custom.frontCommentCount @config.custom.tagCommentCount @config.custom.authorCommentCount @config.post.displayCommentCount}}
     <script id="dsq-count-scr" src="https://{{@config.custom.commentDisqusShortname}}.disqus.com/count.js" async></script>
 {{/checkIfAny}}

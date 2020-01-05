@@ -1,8 +1,5 @@
 {{> amp-head}}
 
-{{#checkIf @config.custom.frontSource '==' "post" }}
-   {{> amp-frontpage-post}}
-{{else}}
     <main class="wrap-page">
         {{#each posts}}
        <article class="card">           
@@ -56,5 +53,4 @@
         {{/each}}
         {{> amp-pagination}}        
     </main>
-{{/checkIf}}	
 {{> amp-footer}}
