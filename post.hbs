@@ -179,162 +179,21 @@
 				<div class="row">
 					{{#../previousPost}}
 						<div class="col-12 col-md-6 col-lg-4">
-							<div class="single-blog-post">
-								<div class="post-thumbnail">
-									<a href="{{url}}" class="post__nav__link" rel="prev">
-										{{#featuredImage}}
-											{{#if url}}
-												{{#if @config.custom.lazyLoad}}
-													<img
-														 class="lazyload"
-														 {{#checkIf @config.custom.lazyLoadEffect '!==' "fadein" }}
-															src="{{urlXs}}"
-														 {{else}}
-															data-src="{{urlXs}}"
-														 {{/checkIf}}
-														 data-srcset="{{urlXs}}"
-														 data-expand="300"
-														 alt="{{alt}}">
-												{{else}}
-													<img src="{{urlXs}}" alt="{{alt}}">
-												{{/if}}
-											{{/if}}
-										{{/featuredImage}}
-									</a>
-								</div>
-								<div class="post-content">
-									<a href="{{url}}" class="headline">
-										<h5>{{title}}</h5>
-									</a>
-									<p>{{{excerpt}}}</p>
-									<div class="post-meta">
-										<p>
-											{{#if @config.post.displayAuthor}}
-												{{#author}}
-													<a href="{{url}}" class="post-author" title="{{name}}">{{name}}</a>,
-												{{/author}}
-											{{/if}}
-											{{#if @config.post.displayDate}}
-												<time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}" class="post-date">
-													{{#checkIf @config.custom.formatDate '!=' 'custom'}}
-														{{date createdAt @config.custom.formatDate}}
-													{{else}}
-														{{date createdAt @config.custom.formatDateCustom}}
-													{{/checkIf}}
-												</time>
-											{{/if}}
-										</p>
-									</div>
-								</div>
-							</div>
+							{{> post-image-title-excerpt-date}}
 						</div>
 					{{/../previousPost}}
 
 					{{#if ../relatedPosts}}
 						{{#each ../relatedPosts}}
 							<div class="col-12 col-md-6 col-lg-4">
-								<div class="single-blog-post">
-									<div class="post-thumbnail">
-										<a href="{{url}}" class="post__nav__link" rel="prev">
-											{{#featuredImage}}
-												{{#if url}}
-													{{#if @config.custom.lazyLoad}}
-														<img
-															 class="lazyload"
-															 {{#checkIf @config.custom.lazyLoadEffect '!==' "fadein" }}
-																src="{{urlXs}}"
-															 {{else}}
-																data-src="{{urlXs}}"
-															 {{/checkIf}}
-															 data-srcset="{{urlXs}}"
-															 data-expand="300"
-															 alt="{{alt}}">
-													{{else}}
-														<img src="{{urlXs}}" alt="{{alt}}">
-													{{/if}}
-												{{/if}}
-											{{/featuredImage}}
-										</a>
-									</div>
-									<div class="post-content">
-										<a href="{{url}}" class="headline">
-											<h5>{{title}}</h5>
-										</a>
-										<p>{{{excerpt}}}</p>
-										<div class="post-meta">
-											<p>
-												{{#if @config.post.displayAuthor}}
-													{{#author}}
-														<a href="{{url}}" class="post-author" title="{{name}}">{{name}}</a>,
-													{{/author}}
-												{{/if}}
-												{{#if @config.post.displayDate}}
-													<time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}" class="post-date">
-														{{#checkIf @config.custom.formatDate '!=' 'custom'}}
-															{{date createdAt @config.custom.formatDate}}
-														{{else}}
-															{{date createdAt @config.custom.formatDateCustom}}
-														{{/checkIf}}
-													</time>
-												{{/if}}
-											</p>
-										</div>
-									</div>
-								</div>
+								{{> post-image-title-excerpt-date}}
 							</div>			
 						{{/each}}
 					{{/if}}
 					
 					{{#../nextPost}}
 						<div class="col-12 col-md-6 col-lg-4">
-							<div class="single-blog-post">
-								<div class="post-thumbnail">
-									<a href="{{url}}" class="post__nav__link" rel="prev">
-										{{#featuredImage}}
-											{{#if url}}
-												{{#if @config.custom.lazyLoad}}
-													<img
-														 class="lazyload"
-														 {{#checkIf @config.custom.lazyLoadEffect '!==' "fadein" }}
-															src="{{urlXs}}"
-														 {{else}}
-															data-src="{{urlXs}}"
-														 {{/checkIf}}
-														 data-srcset="{{urlXs}}"
-														 data-expand="300"
-														 alt="{{alt}}">
-												{{else}}
-													<img src="{{urlXs}}" alt="{{alt}}">
-												{{/if}}
-											{{/if}}
-										{{/featuredImage}}
-									</a>
-								</div>
-								<div class="post-content">
-									<a href="{{url}}" class="headline">
-										<h5>{{title}}</h5>
-									</a>
-									<p>{{{excerpt}}}</p>
-									<div class="post-meta">
-										<p>
-											{{#if @config.post.displayAuthor}}
-												{{#author}}
-													<a href="{{url}}" class="post-author" title="{{name}}">{{name}}</a>,
-												{{/author}}
-											{{/if}}
-											{{#if @config.post.displayDate}}
-												<time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}" class="post-date">
-													{{#checkIf @config.custom.formatDate '!=' 'custom'}}
-														{{date createdAt @config.custom.formatDate}}
-													{{else}}
-														{{date createdAt @config.custom.formatDateCustom}}
-													{{/checkIf}}
-												</time>
-											{{/if}}
-										</p>
-									</div>
-								</div>
-							</div>
+							{{> post-image-title-excerpt-date}}
 						</div>
 					{{/../nextPost}}
 
