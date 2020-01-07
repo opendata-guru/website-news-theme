@@ -4,17 +4,27 @@
          <a
             href="{{@pagination.nextPageUrl}}"
             class="pagination__item pagination__item--prev">
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-prev"/>
             </svg>
-            {{ translate 'partials.pagination.prev' }}
          </a>
       {{else}}
          <a
             href="{{@pagination.nextPageUrl}}"
             class="pagination__item pagination__item--next">
-            {{ translate 'partials.pagination.next' }}
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-next"/>
             </svg>
          </a>
@@ -25,8 +35,13 @@
          <a
             href="{{@pagination.previousPageUrl}}"
             class="pagination__item pagination__item--next">
-            {{ translate 'partials.pagination.next' }}
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-next"/>
             </svg>
          </a>
@@ -34,10 +49,15 @@
          <a
             href="{{@pagination.previousPageUrl}}"
             class="pagination__item pagination__item--prev">
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-prev"/>
             </svg>
-            {{ translate 'partials.pagination.prev' }}
          </a>
       {{/checkIf}}
    {{/if}}
@@ -48,8 +68,13 @@
          <a
             href="{{@pagination.previousPageUrl}}"
             class="pagination__item pagination__item--next">
-            {{ translate 'partials.pagination.next' }}
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-next"/>
             </svg>
          </a>
@@ -57,10 +82,15 @@
          <a
             href="{{@pagination.previousPageUrl}}"
             class="pagination__item pagination__item--prev">
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-prev"/>
             </svg>
-            {{ translate 'partials.pagination.prev' }}
          </a>
       {{/checkIf}}
    {{/if}}
@@ -70,7 +100,13 @@
          <a
             href="{{@pagination.nextPageUrl}}"
             aria-label="{{ translate 'partials.pagination.prev' }}">
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-prev"/>
             </svg>
          </a>
@@ -78,8 +114,13 @@
          <a
             href="{{@pagination.nextPageUrl}}"
             class="pagination__item pagination__item--next">
-            {{ translate 'partials.pagination.next' }}
-            <svg>
+            <svg style="
+	height: 36px;
+	width: 36px;
+	border: 2px solid #d8d8d8;
+	color: #d8d8d8;
+	border-radius: 50%;
+">
                <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#arrow-next"/>
             </svg>
          </a>

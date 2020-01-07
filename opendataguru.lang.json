@@ -38,6 +38,12 @@
 			"newsletterSubscribe": "abonnieren"
 		}
 	},
+	"main": {
+		"posts": "Nachrichten",
+		"allPosts": "Alle",
+		"morePosts": "Mehr",
+		"latestPosts": "Neuste Nachrichten"
+	},
 	"listing": {
 		"advertisement": "Werbung"
 	},

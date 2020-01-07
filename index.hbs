@@ -1,167 +1,244 @@
 {{> head}}
 {{> top}}
 
-<main class="main cat {{@config.custom.layoutFrontpage}}">
-      {{#each posts}}
-         {{#if @config.custom.frontAd}}
-            {{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-2col" }}
-               {{#checkIf @index '==' 6}}
-                  <div class="u-ads cat--layout-2col__2span">
-                     <h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
-                     {{{@config.custom.frontAdCode}}}
-                  </div>
-               {{/checkIf}}
-            {{/checkIf}}
-         {{/if}}
-         <article class="cat__item">
-            {{#if @config.custom.frontAd}}
-               {{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-1col" }}
-                  {{#checkIf @index '==' 5}}
-                     <div class="u-ads">
-                        <h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
-                        {{{@config.custom.frontAdCode}}}
-                     </div>
-                  {{/checkIf}}
-               {{/checkIf}}
-               {{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-2col-1-4" }}
-                  {{#checkIf @index '==' 5}}
-                     <div class="u-ads">
-                        <h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
-                        {{{@config.custom.frontAdCode}}}
-                     </div>
-                  {{/checkIf}}
-               {{/checkIf}}
-               {{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-2col-2-1" }}
-                  {{#checkIf @index '==' 5}}
-                     <div class="u-ads">
-                        <h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
-                        {{{@config.custom.frontAdCode}}}
-                     </div>
-                  {{/checkIf}}
-               {{/checkIf}}
-            {{/if}}
-            <div class="cat__item-inner">
-               {{#featuredImage}}
-                 {{#if url}}
-                  {{#if @config.custom.lazyLoad}}
-                     <a
-                        href="{{../url}}"
-                        class="cat__item-image-link">
-                        <img
-                           class="lazyload cat__item-image"
-                           {{#checkIf @config.custom.lazyLoadEffect '!==' "fadein" }}
-                              src="{{urlXs}}"
-                           {{else}}
-                              data-src="{{url}}"
-                           {{/checkIf}}
-                           data-srcset="{{srcset.listing}}"
-                           data-aspectratio="{{ math width '/' height }}"
-                           data-sizes="auto"
-                           data-expand="300"
-                           height="{{height}}"
-                           width="{{width}}"
-                           alt="{{alt}}">
-                     </a>
-                  {{else}}
-                     <a href="{{../url}}">
-                        <img
-                           class="cat__item-image"
-                           src="{{url}}"
-                           sizes="{{sizes.listing}}"
-                           srcset="{{srcset.listing}}"
-                           alt="{{alt}}">
-                     </a>
-                  {{/if}}
-                 {{/if}}
-               {{/featuredImage}}
-               <header class="u-header">
-                  {{#checkIf @index '==' 0}}
-                     <h1 class="cat__item-title">
-                        <a href="{{url}}">
-                           {{title}}
-                        </a>
-                     </h1>
-                  {{else}}
-                     <h2 class="h5 cat__item-title">
-                        <a href="{{url}}">
-                           {{title}}
-                        </a>
-                     </h2>
-                  {{/checkIf}}
-                  {{#checkIfAny @config.custom.frontAuthorAvatar @config.custom.frontAuthorName @config.custom.frontDate @config.custom.frontTag}}
-                     <div class="u-header__meta u-small">
-                        {{#if @config.custom.frontAuthorAvatar}}
-                           {{#author}}
-                              {{#if avatar}}
-                                 {{#if @config.custom.lazyLoad}}
-                                    <img class="lazyload u-header__avatar" data-src="{{avatar}}" alt="{{name}}">
-                                 {{else}}
-                                    <img src="{{avatar}}" alt="{{name}}" class="u-header__avatar">
-                                 {{/if}}
-                              {{/if}}
-                           {{/author}}
-                        {{/if}}
-                        <div>
-                           {{#if @config.custom.frontAuthorName}}
-                              {{#author}}
-                                 <a href="{{url}}" title="{{name}}">{{name}}</a>
-                              {{/author}}
-                           {{/if}}
+{{#if @config.custom.heroArea}}
+    <div class="hero-area">
 
-                           {{#if @config.custom.frontDate}}
-                              <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
-                                 {{#checkIf @config.custom.formatDate '!=' 'custom'}}
-                                    {{date createdAt @config.custom.formatDate}}
-                                 {{else}}
-                                    {{date createdAt @config.custom.formatDateCustom}}
-                                 {{/checkIf}}
-                              </time>
-                           {{/if}}
+        <!-- Hero Slides Area -->
+        <div class="hero-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(img/blog-img/bg2.jpg);"></div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(img/blog-img/bg1.jpg);"></div>
+        </div>
+
+        <!-- Hero Post Slide -->
+        <div class="hero-post-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-post-slide">
+                            <!-- Single Slide -->
+                            <div class="single-slide d-flex align-items-center">
+                                <div class="post-number">
+                                    <p>1</p>
+                                </div>
+                                <div class="post-title">
+                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
+                                </div>
+                            </div>
+                            <!-- Single Slide -->
+                            <div class="single-slide d-flex align-items-center">
+                                <div class="post-number">
+                                    <p>2</p>
+                                </div>
+                                <div class="post-title">
+                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
+                                </div>
+                            </div>
+                            <!-- Single Slide -->
+                            <div class="single-slide d-flex align-items-center">
+                                <div class="post-number">
+                                    <p>3</p>
+                                </div>
+                                <div class="post-title">
+                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
+                                </div>
+                            </div>
+                            <!-- Single Slide -->
+                            <div class="single-slide d-flex align-items-center">
+                                <div class="post-number">
+                                    <p>4</p>
+                                </div>
+                                <div class="post-title">
+                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
+                                </div>
+                            </div>
                         </div>
-                        {{#if @config.custom.frontTag}}
-                           {{#if mainTag}}
-                              <a href="{{mainTag.url}}" class="{{#featuredImage}}
-                                           {{#if url}}cat__item-tag{{/if}}{{/featuredImage}} u-tag {{ getTagColor slug @config.custom.tagColors}}">{{mainTag.name}}</a>
-                           {{/if}}
-                        {{/if}}
-                     </div>
-                  {{/checkIfAny}}
-               </header>
-               {{#if @config.custom.frontCommentCount}}
-                  <footer>
-                     <a
-                        href="{{url}}#disqus_thread"
-                        data-disqus-identifier="{{id}}"
-                        class="u-comment-count"
-                        rel="nofollow">0</a>
-                  </footer>
-               {{/if}}
+                    </div>
+                </div>
             </div>
-            {{#if @config.custom.frontAd}}
-               {{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-2col-4-1" }}
-                  {{#checkIf @index '==' 4}}
-                     <div class="u-ads u-ads--mt">
-                        <h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
-                        {{{@config.custom.frontAdCode}}}
-                     </div>
-                  {{/checkIf}}
-               {{/checkIf}}
-               {{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-2col-1-2" }}
-                  {{#checkIf @index '==' 3}}
-                     <div class="u-ads u-ads--mt">
-                        <h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
-                        {{{@config.custom.frontAdCode}}}
-                     </div>
-                  {{/checkIf}}
-               {{/checkIf}}
-            {{/if}}
-         </article>
-      {{/each}}
-      {{#if @pagination}}
-            <nav class="pagination {{#checkIf @config.custom.layoutFrontpage '!=' "cat--layout-1col" }}cat--layout-2col__2span{{/checkIf}}">
-				{{> pagination}}
-		   </nav>
-        {{/if}}
-   </main>
-   {{> sidebar}}
+        </div>
+    </div>
+{{/if}}
+
+<div class="main-content-wrapper section-padding-100">
+	<div class="container">
+		<div class="row justify-content-center">
+			{{#if todo}}
+				<div class="col-12 col-lg-8">
+					<div class="post-content-area mb-50">
+						<!-- Catagory Area -->
+						<div class="world-catagory-area">
+							<ul class="nav nav-tabs" role="tablist">
+								<li class="title">{{ translate 'main.posts' }}</li>
+
+								<li class="nav-item">
+									<a class="nav-link active" id="taball" data-toggle="tab" href="#alltags" role="tab" aria-controls="alltags" aria-selected="true">{{ translate 'main.allPosts' }}</a>
+								</li>
+
+								{{#each tags}}
+									{{#checkIf @index '<' @config.custom.frontpageTagsAmount}}
+										<li class="nav-item">
+											<a class="nav-link" id="tab{{slug}}" data-toggle="tab" href="#tag-{{slug}}" role="tab" aria-controls="tag-{{slug}}" aria-selected="false">{{name}}</a>
+										</li>
+									{{/checkIf}}
+								{{/each}}
+
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ translate 'main.morePosts' }}</a>
+									<div class="dropdown-menu">
+										{{#each tags}}
+											{{#checkIf @index '>=' @config.custom.frontpageTagsAmount}}
+												{{#checkIf @index '<' @config.custom.frontpageTagsMaximum}}
+													<a class="nav-link" id="tab{{slug}}" data-toggle="tab" href="#tag-{{slug}}" role="tab" aria-controls="tag-{{slug}}" aria-selected="false">{{name}}</a>
+												{{/checkIf}}
+											{{/checkIf}}
+										{{/each}}
+									</div>
+								</li>
+							</ul>
+							<div class="tab-content" id="myTabContent">
+
+								<div class="tab-pane fade show active" id="alltags" role="tabpanel" aria-labelledby="taball">
+									<div class="row">
+										<div class="col-12 col-md-6">
+											all
+										</div>
+										<div class="col-12 col-md-6">
+											all
+											<!-- Single Blog Post -->
+											<!-- Single Blog Post -->
+											<!-- Single Blog Post -->
+										</div>
+									</div>
+								</div>
+
+								{{#each tags}}
+									{{#checkIf @index '<' @config.custom.frontpageTagsMaximum}}
+										<div class="tab-pane fade {{#checkIf @index '<' '0'}} show active {{/checkIf}}" id="tag-{{slug}}" role="tabpanel" aria-labelledby="tab{{slug}}">
+											<div class="row">
+												<div class="col-12 col-md-6">
+													{{name}}
+												</div>
+												<div class="col-12 col-md-6">
+													{{@index}}
+													<!-- Single Blog Post -->
+													<!-- Single Blog Post -->
+													<!-- Single Blog Post -->
+												</div>
+											</div>
+										</div>
+									{{/checkIf}}
+								{{/each}}
+
+							</div>
+						</div>
+
+						<!-- Catagory Area -->
+						<div class="world-catagory-area mt-50">
+						</div>
+					</div>
+				</div>
+			{{/if}}
+
+			<div class="col-12 col-lg-8">
+				<div class="title">
+					<h5>{{ translate 'main.latestPosts' }}</h5>
+				</div>
+
+				{{#each posts}}
+					{{#if @config.custom.frontAd}}
+						{{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-2col" }}
+							{{#checkIf @index '==' 6}}
+								<div class="u-ads cat--layout-2col__2span">
+									<h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
+									{{{@config.custom.frontAdCode}}}
+								</div>
+							{{/checkIf}}
+						{{/checkIf}}
+					{{/if}}
+					{{> post-image-title-excerpt-date-landscape}}
+				{{/each}}
+
+				{{#if @pagination}}
+					<div class="owl-carousel">
+						<div class="owl-controls">
+							<div class="owl-nav">
+								<div class="owl-prev" style=""><i class="fa fa-angle-left"></i></div>
+								<div class="owl-next" style=""><i class="fa fa-angle-right"></i></div>
+							</div>
+						</div>
+					</div>
+					<nav class="pagination">
+						{{> pagination}}
+					</nav>
+				{{/if}}
+			</div>
+
+			<div class="col-12 col-md-8 col-lg-4">
+				{{> sidebar}}
+			</div>
+		</div>
+
+		{{#if todo}}
+			<div class="row justify-content-center">
+
+				<!-- ========== Single Blog Post ========== -->
+
+				<!-- ========== Single Blog Post ========== -->
+
+				<!-- ========== Single Blog Post ========== -->
+
+			</div>
+		{{/if}}
+
+		{{#if todo}}
+			<div class="world-latest-articles">
+				<div class="row">
+					<div class="col-12 col-lg-8">
+						<div class="title">
+							<h5>{{ translate 'main.latestPosts' }}</h5>
+						</div>
+
+						{{#each posts}}
+							{{#if @config.custom.frontAd}}
+								{{#checkIf @config.custom.layoutFrontpage '==' "cat--layout-2col" }}
+									{{#checkIf @index '==' 6}}
+										<div class="u-ads cat--layout-2col__2span">
+											<h3 class="u-ads__title">{{ translate 'listing.advertisement' }}</h3>
+											{{{@config.custom.frontAdCode}}}
+										</div>
+									{{/checkIf}}
+								{{/checkIf}}
+							{{/if}}
+							{{> post-image-title-excerpt-date-landscape}}
+						{{/each}}
+					</div>
+
+					<div class="col-12 col-lg-4">
+						<div class="title">
+							<h5>Most Popular Videos</h5>
+						</div>
+
+						<!-- Single Blog Post -->
+						<!-- Single Blog Post -->
+					</div>
+				</div>
+			</div>
+		{{/if}}
+
+		{{#if todo}}
+			<!-- Load More btn -->
+			<div class="row">
+				<div class="col-12">
+					<div class="load-more-btn mt-50 text-center">
+						<a href="#" class="btn world-btn">Load More</a>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+	</div>
+</div>
+
 {{> footer}}

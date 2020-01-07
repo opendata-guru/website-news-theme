@@ -213,6 +213,29 @@
         },
 
 		
+        {
+            "name": "heroArea",
+            "label": "Show hero area",
+            "group": "Frontpage",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "frontpageTagsAmount",
+            "label": "Limit tags",
+            "group": "Frontpage",
+            "value": "5",
+            "type": "text"
+        },
+        {
+            "name": "frontpageTagsMaximum",
+            "label": "Max tags",
+            "group": "Frontpage",
+            "value": "10",
+            "type": "text"
+        },
+
+		
 		{
             "name": "mainWidth",
             "label": "Main column width",

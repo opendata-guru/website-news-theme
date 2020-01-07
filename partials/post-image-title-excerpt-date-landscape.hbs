@@ -1,4 +1,4 @@
-<div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.2s">
+<div class="single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.2s">
 	<div class="post-thumbnail">
 		<a href="{{url}}" class="post__nav__link" rel="prev">
 			{{#featuredImage}}
@@ -20,13 +20,6 @@
 				{{/if}}
 			{{/featuredImage}}
 		</a>
-		{{#if @config.custom.frontTag}}
-			{{#if mainTag}}
-				<div class="post-cta">
-					<a href="{{mainTag.url}}">{{mainTag.name}}</a>
-				</div>
-			{{/if}}
-		{{/if}}
 	</div>
 	<div class="post-content">
 		<a href="{{url}}" class="headline">
@@ -35,12 +28,12 @@
 		<p>{{{excerpt}}}</p>
 		<div class="post-meta">
 			<p>
-				{{#if @config.post.displayAuthor}}
+				{{#if @config.custom.frontAuthorName}}
 					{{#author}}
 						<a href="{{url}}" class="post-author" title="{{name}}">{{name}}</a>,
 					{{/author}}
 				{{/if}}
-				{{#if @config.post.displayDate}}
+				{{#if @config.custom.frontDate}}
 					<time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}" class="post-date">
 						{{#checkIf @config.custom.formatDate '!=' 'custom'}}
 							{{date createdAt @config.custom.formatDate}}
