@@ -1,4 +1,4 @@
-<div class="post-sidebar-area mb-100">
+<div class="post-sidebar-area mb-100 wow fadeInUpBig" data-wow-delay="0.2s">
 	{{#if @config.custom.sidebarAbout}}
 		<div class="sidebar-widget-area">
 			<h5 class="title">{{@config.custom.sidebarAboutTitle}}</h5>
@@ -15,38 +15,7 @@
 				<div class="widget-content">
 					{{#each featuredPosts}}
 						{{#checkIf @index '<' @config.custom.featuredAmount}}
-							<div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
-								{{#if @config.custom.featuredImage}}
-									{{#featuredImage}}
-										{{#if url}}
-											<div class="post-thumbnail">
-												{{#if @config.custom.lazyLoad}}
-													<a href="{{../url}}" class="featured__image-link">
-														<img
-															class="lazyload"
-															 {{#checkIf @config.custom.lazyLoadEffect '!==' "lqip" }}
-																src="{{urlXs}}"
-															 {{else}}
-																data-src="{{urlXs}}"
-															 {{/checkIf}}
-															 data-srcset="{{urlXs}}"
-															 alt="{{alt}}">
-													</a>
-												{{else}}
-													<a href="{{../url}}" class="featured__image-link">
-														<img src="{{urlXs}}" alt="{{alt}}">
-													</a>
-												{{/if}}
-											</div>
-										{{/if}}
-									{{/featuredImage}}
-								{{/if}}
-								<div class="post-content">
-									<a href="{{url}}" class="headline">
-										<h5 class="mb-0">{{title}}</h5>
-									</a>
-								</div>
-							</div>
+							{{> post-listitem}}
 						{{/checkIf}}
 					{{/each}}
 				</div>
@@ -70,46 +39,7 @@
 				<div class="widget-content">
 					{{#each posts}}
 						{{#checkIf @index '==' 0}}
-							<div class="single-blog-post todays-pick">
-								<div class="post-thumbnail">
-									{{#featuredImage}}
-										{{#if url}}
-											{{#if @config.custom.lazyLoad}}
-												<a href="{{../url}}">
-													<img
-														 class="lazyload cat__item-image"
-														 {{#checkIf @config.custom.lazyLoadEffect '!==' "fadein" }}
-															src="{{urlXs}}"
-														 {{else}}
-															data-src="{{url}}"
-														 {{/checkIf}}
-														 data-srcset="{{srcset.listing}}"
-														 data-aspectratio="{{ math width '/' height }}"
-														 data-sizes="auto"
-														 data-expand="300"
-														 height="{{height}}"
-														 width="{{width}}"
-														 alt="{{alt}}">
-												</a>
-											{{else}}
-												<a href="{{../url}}">
-													<img
-														 class="cat__item-image"
-														 src="{{url}}"
-														 sizes="{{sizes.listing}}"
-														 srcset="{{srcset.listing}}"
-														 alt="{{alt}}">
-												</a>
-											{{/if}}
-										{{/if}}
-									{{/featuredImage}}
-								</div>
-								<div class="post-content px-0 pb-0">
-									<a href="{{url}}" class="headline">
-										<h5>{{title}}</h5>
-									</a>
-								</div>
-							</div>
+							{{> post-image-title}}
 						{{/checkIf}}
 					{{/each}}
 				</div>

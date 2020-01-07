@@ -1,0 +1,32 @@
+<div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+	{{#if @config.custom.featuredImage}}
+		{{#featuredImage}}
+			{{#if url}}
+				<div class="post-thumbnail">
+					{{#if @config.custom.lazyLoad}}
+						<a href="{{../url}}" class="featured__image-link">
+							<img
+								class="lazyload"
+								 {{#checkIf @config.custom.lazyLoadEffect '!==' "lqip" }}
+									src="{{urlXs}}"
+								 {{else}}
+									data-src="{{urlXs}}"
+								 {{/checkIf}}
+								 data-srcset="{{urlXs}}"
+								 alt="{{alt}}">
+						</a>
+					{{else}}
+						<a href="{{../url}}" class="featured__image-link">
+							<img src="{{urlXs}}" alt="{{alt}}">
+						</a>
+					{{/if}}
+				</div>
+			{{/if}}
+		{{/featuredImage}}
+	{{/if}}
+	<div class="post-content">
+		<a href="{{url}}" class="headline">
+			<h5 class="mb-0">{{title}}</h5>
+		</a>
+	</div>
+</div>

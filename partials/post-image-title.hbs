@@ -1,0 +1,40 @@
+<div class="single-blog-post todays-pick">
+	<div class="post-thumbnail">
+		{{#featuredImage}}
+			{{#if url}}
+				{{#if @config.custom.lazyLoad}}
+					<a href="{{../url}}">
+						<img
+							 class="lazyload cat__item-image"
+							 {{#checkIf @config.custom.lazyLoadEffect '!==' "fadein" }}
+								src="{{urlXs}}"
+							 {{else}}
+								data-src="{{url}}"
+							 {{/checkIf}}
+							 data-srcset="{{srcset.listing}}"
+							 data-aspectratio="{{ math width '/' height }}"
+							 data-sizes="auto"
+							 data-expand="300"
+							 height="{{height}}"
+							 width="{{width}}"
+							 alt="{{alt}}">
+					</a>
+				{{else}}
+					<a href="{{../url}}">
+						<img
+							 class="cat__item-image"
+							 src="{{url}}"
+							 sizes="{{sizes.listing}}"
+							 srcset="{{srcset.listing}}"
+							 alt="{{alt}}">
+					</a>
+				{{/if}}
+			{{/if}}
+		{{/featuredImage}}
+	</div>
+	<div class="post-content px-0 pb-0">
+		<a href="{{url}}" class="headline">
+			<h5>{{title}}</h5>
+		</a>
+	</div>
+</div>
