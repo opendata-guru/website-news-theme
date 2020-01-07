@@ -1132,63 +1132,6 @@
             "size": "small"
         },        
         {
-            "name": "fontFamily",
-            "label": "Font family",
-            "group": "Fonts",
-            "note": "The 'OS Default Font' option will use the native system fonts of the browser your site visitors are using, providing a boost to speed and performance.<p><strong>Please note:</strong> when using Google Fonts, the IP address of your website visitors will be sent to Google to allow the correct fonts to be downloaded to their browser. The Google Fonts API limits the collection, storage and use of end-user data only to what is needed to deliver the fonts efficiently.</p>",
-            "value": "font-pair-0",
-            "type": "select",
-            "options": [
-                {
-                    "label": "OS Default Font + OS Default Font",
-                    "value": "font-pair-0"
-                },
-                {
-                    "label": "DM Sans + DM Sans",
-                    "value": "font-pair-1"
-                },
-                {
-                    "label": "OS Default Font + Lora",
-                    "value": "font-pair-2"
-                },
-                {
-                    "label": "Playfair Display + OS Default Font",
-                    "value": "font-pair-3"
-                },
-                {
-                    "label": "Rubik + OS Default Font",
-                    "value": "font-pair-4"
-                },
-                {
-                    "label": "Ubuntu + Ubuntu",
-                    "value": "font-pair-5"
-                },
-                {
-                    "label": "Roboto + Open Sans",
-                    "value": "font-pair-6"
-                },
-                {
-                    "label": "Roboto Condensed + OS Default Font",
-                    "value": "font-pair-7"
-                },
-                {
-                    "label": "Cairo + Maitree",
-                    "value": "font-pair-8"
-                },
-                {
-                    "label": "OS Default Font + Maitree",
-                    "value": "font-pair-9"
-                }
-            ]
-        },
-        {
-            "name": "separator",
-            "type": "separator",
-            "label": "",
-            "group": "Fonts",
-            "size": "small"
-        },
-        {
             "name": "minFontSize",
             "label": "Minimum font size",
             "group": "Fonts",
