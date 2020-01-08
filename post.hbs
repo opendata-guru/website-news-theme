@@ -79,9 +79,9 @@
 								{{/if}}
 							{{/if}}
 
-							{{#checkIfAny @config.post.displayDate @config.post.displayAuthor @config.post.displayLastUpdatedDate}}
-								<div class="post-meta second-part">
-									<p>
+							<div class="post-meta second-part">
+								<p>
+									{{#checkIfAny @config.post.displayDate @config.post.displayAuthor @config.post.displayLastUpdatedDate}}
 										{{#if @config.post.displayAuthor}}
 											{{#author}}
 												<a href="{{url}}" class="post-author" title="{{name}}">{{name}}</a>,
@@ -105,13 +105,25 @@
 												{{/checkIf}}
 											</time>
 										{{/if}}
-									</p>
-								</div>
-							{{/checkIfAny}}
+										<br>
+									{{/checkIfAny}}
+
+									{{#if featuredImage.url}}
+										{{#checkIfAny featuredImage.caption featuredImage.credits}}
+											Titelbild: {{featuredImage.caption}} <a href="https://unsplash.com/license">{{featuredImage.credits}}</a><br>
+										{{/checkIfAny}}
+									{{/if}}
+
+									Text: {{author.name}}, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0</a><br>
+								</p>
+							</div>
 
 							{{#if @config.post.displayShareButtons}}
-								<div class="social-area">
-									{{> share-buttons}}
+								<div class="post-meta second-part">
+									<div class="social-area">
+										<p>{{ translate 'post.sharePost' }}</p>
+										{{> share-buttons}}
+									</div>
 								</div>
 							{{/if}}
 
@@ -125,17 +137,6 @@
 									   rel="nofollow">0</a>
 								{{/if}}
 							{{/if}}
-
-							<div class="post-meta second-part">
-								<p>
-									{{#if featuredImage.url}}
-										{{#checkIfAny featuredImage.caption featuredImage.credits}}
-											Titelbild: {{featuredImage.caption}} {{featuredImage.credits}}<br>
-										{{/checkIfAny}}
-									{{/if}}
-									Text: CC-0<br>
-								</p>
-							</div>
 						</div>
 
 						{{#if @config.post.displayAuthorBio}}

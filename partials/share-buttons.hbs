@@ -1,26 +1,24 @@
 {{#if @config.custom.shareFacebook}}
    <a
       href="https://www.facebook.com/sharer/sharer.php?u={{encodeUrlFragment url}}"
-      class="js-share facebook"
+      class="js-share facebook mr-2"
+	  style="background:#1877f2;width:36px;height:36px;border-radius:50%;display:inline-block;text-align:center;line-height:36px;font-size:20px;color:#fff;"
       title="{{ translate 'partials.shareButtons.shareWithFacebook' }}"
       rel="nofollow noopener noreferrer"
       aria-label="{{ translate 'partials.shareButtons.shareWithFacebook' }}">
-      <svg class="u-icon" style="width:36px;height:36px;">
-         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#facebook"/>
-      </svg>
+	   <i class="fa fa-facebook"></i>
    </a>
 {{/if}}
 
 {{#if @config.custom.shareTwitter}}
    <a
       href="https://twitter.com/share?url={{encodeUrlFragment url}}&amp;via={{#if @config.custom.shareTwitterName}}{{encodeUrlFragment @config.custom.shareTwitterName}}{{else}}{{encodeUrlFragment @website.name}}{{/if}}&amp;text={{encodeUrlFragment title}}"
-      class="js-share twitter"
+      class="js-share twitter mr-2"
+	  style="background:#1da1f2;width:36px;height:36px;border-radius:50%;display:inline-block;text-align:center;line-height:36px;font-size:20px;color:#fff;"
       title="{{ translate 'partials.shareButtons.shareWithTwitter' }}"
       rel="nofollow noopener noreferrer"
       aria-label="{{ translate 'partials.shareButtons.shareWithTwitter' }}">
-      <svg class="u-icon" style="width:36px;height:36px;">
-         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#twitter"/>
-      </svg>
+	   <i class="fa fa-twitter"></i>
    </a>
 {{/if}}
 
@@ -53,26 +51,24 @@
 {{#if @config.custom.shareWhatsApp}}
    <a
       href="https://wa.me/?text={{encodeUrlFragment title}} {{encodeUrlFragment url}}"
-      class="js-share whatsapp"
+      class="js-share whatsapp mr-2"
+	  style="background:#25d366;width:36px;height:36px;border-radius:50%;display:inline-block;text-align:center;line-height:36px;font-size:20px;color:#fff;"
       rel="nofollow noopener noreferrer"
       title="{{ translate 'partials.shareButtons.shareWithWhatsapp' }}"
       aria-label="{{ translate 'partials.shareButtons.shareWithWhatsapp' }}">
-      <svg class="u-icon" style="width:36px;height:36px;">
-         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#whatsapp"/>
-      </svg>
+	   <i class="fa fa-whatsapp"></i>
    </a>
 {{/if}}
 
 {{#if @config.custom.shareLinkedin}}
    <a
       href="http://www.linkedin.com/shareArticle?url={{encodeUrlFragment url}}&amp;title={{encodeUrlFragment title}}"
-      class="js-share linkedin"
+      class="js-share linkedin mr-2"
+	  style="background:#007bb5;width:36px;height:36px;border-radius:50%;display:inline-block;text-align:center;line-height:36px;font-size:20px;color:#fff;"
       title="{{ translate 'partials.shareButtons.shareWithLinkedIn' }}"
       rel="nofollow noopener noreferrer"
       aria-label="{{ translate 'partials.shareButtons.shareWithLinkedIn' }}">
-      <svg class="u-icon" style="width:36px;height:36px;">
-         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#linkedin"/>
-      </svg>
+	   <i class="fa fa-linkedin"></i>
    </a>
 {{/if}}
 
