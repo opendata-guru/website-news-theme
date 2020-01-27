@@ -63,6 +63,10 @@ a {
     font-size: 14px;
     font-weight: 400;
     color: #0000ff; }
+.single-blog-content a, .single-blog-content a:hover, .single-blog-content a:focus {
+	font-family: inherit;
+	text-decoration: underline #0000ff 2px;
+}
 
 #preloader {
   display: -webkit-box;
